@@ -7,21 +7,44 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="img/tristan-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <title>Text Editor</title>
 </head>
 
 <body>
-
     <div class="wrapper">
         <div class="container">
-            <textarea id="input-textarea" rows="12" placeholder="Start Typing here.."></textarea>
+            <div class="options">
+                <button onclick="textBold()" id="textB" class="option-button format">
+                    <i class="fa-solid fa-bold"></i>
+                </button>
+                <button onclick="textItalic()" id="textI" class="option-button format">
+                    <i class="fa-solid fa-italic"></i>
+                </button>
+                <button onclick="textUnderline()" id="textU" class="option-button format">
+                    <i class="fa-solid fa-underline"></i>
+                </button>
+                <button onclick="textStrike()" id="textS" class="option-button format">
+                    <i class="fa-solid fa-strikethrough"></i>
+                </button>
+
+                <button onclick="fullSequence()" class="option-button">
+                    <i class="fa-solid fa-list-ol"></i>
+                </button>
+
+                <select onclick="changeCase()" id="wordFormat" class="adv-option-button">
+                    <option value="clearCase">Clear Case</option>
+                    <option value="sentenceCase">Sentence Case</option>
+                    <option value="upperCase">UPPER CASE</option>
+                    <option value="lowerCase">lower case</option>
+                </select>
+
+            </div>
+            <br>
+            <textarea id="text-input" rows="12" placeholder="Start Typing here.." contenteditable="true"></textarea>
         </div>
         <div class="count">
             <div>
@@ -32,17 +55,6 @@
                 <h5 id="charac-count">0</h5>
                 <p>Characters</p>
             </div>
-
-        </div>
-        <div class="butones">
-            <button type="button" onclick="sentenceCasing()" id="case1" class="btn btn-primary btn-lg">Sentence
-                case</button>
-            <button type="button" onclick="fullCapital()" id="case2" class="btn btn-success btn-lg">UPPER CASE</button>
-            <button type="button" onclick="fullLower()" id="case3" class="btn btn-warning btn-lg">lower
-                case</button>
-
-            <button type="button" onclick="fullSequence()" id="case7" class="btn btn-dark btn-lg">Sequencer</button>
-            <button type="button" onclick="fullClear()" id="case8" class="btn btn-danger btn-lg">Clear</button>
         </div>
     </div>
 
@@ -57,7 +69,6 @@
     </script>
 
     <script src="script.js"></script>
-
 </body>
 
 </html>
